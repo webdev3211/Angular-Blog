@@ -1,0 +1,21 @@
+<!-- <div *ngFor="let post of posts"> 
+  async will subscribe to our data, as soon as we leave the compopnent we want it too unsubscribe to our data so that we are not leaking memory
+  <h2 routerLink="{{ post.id }}">{{ post.title }}</h2>
+  <p>{{ post.content }}</p>
+
+</div> -->
+
+<section>
+  <mat-card *ngFor="let post of posts"> 
+    <mat-card-content routerLink="{{ post.id }}">
+      <img src="{{ post.image }}" alt="{{ post.title }}">
+      <h2>{{ post.title }}</h2>
+      <p><small>Posted By: {{ post.author }} &bull; on <i>{{ post.published | date: 'fullDate'}} </i> </small></p>
+    </mat-card-content>
+    <mat-card-actions align="end" *ngIf="auth.currentUserId === post.authorId">
+      <button mat-icon-button (click)="delete(post.id)" >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</section>

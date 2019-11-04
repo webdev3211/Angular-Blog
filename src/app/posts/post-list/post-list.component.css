@@ -1,0 +1,32 @@
+section{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: auto;
+    grid-gap: 10px;
+    margin: 0 auto;
+    max-width: 95%;
+}
+
+mat-card{
+    margin: 10px 0;
+    max-width: 700px;
+
+}
+
+img{
+    width: 100%;
+}
+
+button :hover{
+    color: red;
+}
+
+mat-content-card:focus{
+    outline: none;
+    border: 0;
+}
+
+mat-content-card::selection{
+    outline: none;
+    border: 0;
+}
